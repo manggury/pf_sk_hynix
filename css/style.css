@@ -403,23 +403,56 @@
     color: var(--wc);
 }
 
+.product_wrap .img_box .title ul {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+}
+
+.product_wrap .img_box .title ul li {
+    position: relative;
+}
+
+.product_wrap .img_box .title ul li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translate(-50%, 0);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--fc);
+}
+
 @media (max-width:768px) {
     .product_wrap .img_box {
         height: 250px;
+    }
+
+    .product_wrap .img_box .title ul {
+        gap: 15px 30px;
+        flex-wrap: wrap;
     }
 }
 
 @media (max-width:375px) {
     .product_wrap .img_box .title h2 {
         font-size: 6vw;
+        margin: 0 0 24px 0;
     }
 
-    .product_wrap .img_box .title p {
-        word-break: keep-all;
-
+    .product_wrap .img_box .title ul {
+        gap: 10px 30px;
     }
 
-    .product_wrap .img_box .title p br {
+    .product_wrap .img_box .title ul li:nth-child(1)::before,
+    .product_wrap .img_box .title ul li:nth-child(3)::before,
+    .product_wrap .img_box .title ul li:nth-child(5)::before,
+    .product_wrap .img_box .title ul li:nth-child(6)::before,
+    .product_wrap .img_box .title ul li:nth-child(8)::before,
+    .product_wrap .img_box .title ul li:nth-child(11)::before {
         display: none;
     }
 }
@@ -574,8 +607,14 @@
 
     .ir_wrap .left_box li .itm .icon {
         display: block;
-        line-height: 65px;
-        margin: 10px 0 0 0;
+        margin: 30px auto 0 auto;
+        line-height: 40px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .ir_wrap .left_box li .itm span {
+        font-size: 16px;
     }
 
     .ir_wrap .left_box li .itm::after {
@@ -587,6 +626,7 @@
         right: 0;
         transform: translate(0, 0);
         font-size: 20px;
+
     }
 }
 
@@ -741,6 +781,7 @@
     }
 
     .news_wrap ul {
+        flex-wrap: wrap;
         gap: 10px;
         margin: 0 0 40px 0;
     }
@@ -972,8 +1013,51 @@
 
 @media (max-width:768px) {
     .footer_ct .ct_wrap {
-        display: none;
+        flex-direction: column;
     }
+
+
+}
+
+@media (max-width:375px) {
+    .footer_top .menu {
+        gap: 10px;
+        text-align: left;
+    }
+
+    .footer_top .menu>* {
+        flex: 1 1 40%;
+    }
+
+    .footer_top .menu>li:last-child {
+        flex: 1 1 40%;
+        order: -1;
+    }
+
+    .footer_ct .ct_wrap {
+        flex-direction: row;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .footer_ct .ct_wrap .help,
+    .footer_ct .ct_wrap .util {
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .footer_ct .ct_wrap .help li::before {
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translate(0, -50%);
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--fc);
+    }
+
 }
 
 /* -----------------totop------------------------------- */
