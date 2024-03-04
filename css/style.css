@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1000;
 
     height: 80px;
     border-bottom: 1px solid var(--lc);
@@ -213,12 +213,12 @@
 
 @media (max-width:375px) {
     .mainVisual .visual_wrap video {
-        height: auto;
+        height: 300px;
         filter: blur(2px) grayscale(1);
     }
 
     .mainVisual .visual_wrap .expo_box {
-        top: 100px;
+        top: 250px;
         left: 50%;
         transform: translate(-50%, 0);
         flex-direction: column;
@@ -536,21 +536,21 @@
 }
 
 .ir_wrap .right_box .right_inner {
-    margin: 0 auto;
-    padding: 30px 0 0 0;
-    width: 90%;
+    padding: 30px 20px;
+    height: 100%;
 }
 
 .ir_wrap .right_box .info_box {
     position: relative;
     display: block;
+    margin: 0 0 12px 0;
 }
 
 .ir_wrap .right_box .info_box::after {
     position: absolute;
     top: 50%;
     right: 10px;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     content: "128,400";
     font-size: 30px;
     cursor: pointer;
@@ -563,9 +563,9 @@
     margin: 0 0 10px 0;
 }
 
-.ir_wrap .right_box .chart_box {
-    width: 100%;
-    height: 100%;
+.ir_wrap .right_box .ct_box #myChart {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 @media (max-width:768px) {
@@ -594,10 +594,6 @@
     .ir_wrap .left_box li .itm:hover::after {
         right: 15px;
     }
-
-    .ir_wrap .right_box .chart_box {
-        min-height: 280px;
-    }
 }
 
 @media (max-width:375px) {
@@ -623,7 +619,6 @@
 
     .ir_wrap .right_box .info_box::after {
         top: 0;
-        right: 0;
         transform: translate(0, 0);
         font-size: 20px;
 
@@ -708,13 +703,16 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+    z-index: 999;
+
     width: 50px;
-    height: 60px;
-    font-size: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 36px;
+    line-height: 50px;
     font-family: xeicon;
     color: #fff;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
 }
 
 .news_slide .slick-next::before {

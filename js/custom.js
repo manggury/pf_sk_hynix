@@ -38,7 +38,34 @@ $(function () {
         $('.header_wrap .gnb').toggleClass('on');
     });;
 
+    const ctx = document.getElementById('myChart');
 
+    new Chart(ctx, {
+        type: 'line',
+        fill: true,
+        data: {
+            labels: ['9', '10', '11', '12', '1', '2'],
+            datasets: [{
+                // label: false,
+                data: [14000, 11480, 13000, 15520, 14300, 12840],
+                borderWidth: 2,
+                borderColor: '#FF6384',
+                backgroundColor: '#FFFFFF',
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
     $('.news_slide').slick({
         arrows: true,
         centerMode: true,
